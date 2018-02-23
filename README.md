@@ -10,7 +10,7 @@ This is my implementation of the homework assigned -- see below for the full lis
 
 - [x] Implement devise login/logout
 
-- [x] Posts belong to users (devise)
+- [x] Posts belong to users
 
 - [x] Posts can be set to draft or published (enums)
 
