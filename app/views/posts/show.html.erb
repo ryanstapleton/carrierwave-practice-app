@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2><%= @post.title %></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <p><%= image_tag @post.main_image %></p>
+      <%= link_to 'Back', request.referer %>
+    </div>
+
+    <div class="col-md-6">
+      <p>
+        <%= @post.body %>
+      </p>
+    </div>
+  </div>
+</div>

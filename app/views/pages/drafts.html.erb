@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Drafts</h1>
+
+<% unless @posts_d.empty? %>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Body</th>
+        <th>User</th>
+        <th>Creation Date</th>
+        <th colspan='2', width='5%'></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= render 'draft_table' %>
+    </tbody>
+
+  </table>
+<% else %>
+  <p>You don't have any drafts to dispay.</p>
+<% end %>
+
+<%= link_to 'New Post', new_post_path %>
+
+<br><br>
+
+<h4>Your Published Posts</h4>
+<% unless @posts_p.empty? %>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Body</th>
+        <th>User</th>
+        <th>Creation Date</th>
+        <th colspan='2', width='5%'></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= render 'published_table' %>
+    </tbody>
+
+  </table>
+<% else %>
+  <p>You haven't published any posts.</p>
+<% end %>
+
+
+

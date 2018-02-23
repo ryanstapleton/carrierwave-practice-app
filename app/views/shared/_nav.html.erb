@@ -1,0 +1,17 @@
+<nav class="nav-custom navbar navbar-default">
+  <ul class='nav navbar-nav'>
+    <li class="<%= active?(root_url) %>"><%= link_to "Home", root_url %></li>
+    <li class="<%= active?(posts_path) %>"><%= link_to "Feed", posts_path %></li>
+    <li class="<%= active?(drafts_path) %>"><%= link_to "Your Posts", drafts_path if current_user %></li>
+    <% if current_user %>
+      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      <li class="<%= active?(edit_user_registration_path) %>"><%= link_to "Account", edit_user_registration_path %></li>
+    <% else %>
+      <li class="<%= active?(new_user_session_path) %>"><%= link_to "Login", new_user_session_path %></li>
+      <li class="<%= active?(new_user_registration_path) %>"><%= link_to "Sign Up", new_user_registration_path %></li>
+    <% end %>
+  </ul>
+  <% if current_user %>
+    <h4 align="right", class="welcome-name">Welcome, <%= current_user.first_name %>!</h4>
+  <% end %>
+</nav>
